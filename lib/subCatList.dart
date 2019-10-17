@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mathapp/CatRow.dart';
-import 'package:mathapp/CatRow1.dart';
-import 'package:mathapp/CatRow2.dart';
-import 'package:mathapp/CatRow3.dart';
-import 'package:mathapp/CatRow4.dart';
-import 'package:mathapp/CatRow5.dart';
-import 'package:mathapp/CatRow6.dart';
-import 'package:mathapp/CatRow7.dart';
 import 'package:mathapp/MyDrawer.dart';
 import 'package:mathapp/main_login.dart';
 import 'package:mathapp/bottomnavigation.dart';
-class Category_list extends StatelessWidget{
+import 'package:mathapp/sub_page.dart';
+class subCatList extends StatelessWidget{
 
 
 
@@ -20,7 +13,7 @@ class Category_list extends StatelessWidget{
     final data= MediaQuery.of(context);
     return Scaffold(
       appBar: new AppBar(
-        title:  Text('Fractions'),
+        title:  Text('Data Handling'),
 
         backgroundColor: Colors.green,
         elevation: 0.0,
@@ -61,7 +54,7 @@ class Category_list extends StatelessWidget{
                         style: TextStyle(
                             color: Colors.white, fontSize: 15),
 
-                ),
+                      ),
                     ),
                   ),
                   Container(
@@ -104,57 +97,7 @@ class Category_list extends StatelessWidget{
 
 
                     children: <Widget>[
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          CategoryRow(),
-                          CategoryRow1(),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          CategoryRow2(),
-                          CategoryRow3(),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          CategoryRow4(),
-                          CategoryRow5(),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          CategoryRow6(),
-                          CategoryRow7(),
-                        ],
-                      ),
-                      Row(
-                        children: <Widget>[
-
-                        ],
-                      ),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                      SubPageList(),
 
 
                     ],
@@ -177,4 +120,15 @@ class Category_list extends StatelessWidget{
     );
   }
 
+}
+class SubPageList extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Column(
+      children: <Widget>[
+        SubPageListBody(),
+      ],
+    );
+  }
 }
