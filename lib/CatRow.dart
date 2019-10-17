@@ -2,63 +2,74 @@ import 'package:flutter/material.dart';
 import 'package:mathapp/Signup.dart';
 import 'package:mathapp/subCatList.dart';
 
-class CategoryRow extends StatelessWidget{
+class CategoryRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Container(
-      padding: EdgeInsets.only(left: 5.0,right: 9.0,top: 20.0),
+      padding: EdgeInsets.only(left: 5.0, right: 9.0, top: 20.0),
       child: Stack(
-       children: <Widget>[
-         CustomPaint(
-           painter: ShapesPainter(),
-           child: Container(
-             height: 150,
-             width: 150,
-             decoration: BoxDecoration(
-               border: new Border.all(color: Colors.white),
-               borderRadius: BorderRadius.all(Radius.circular(0.0)),
-             ),
-             child: Stack(
-             children: <Widget>[
-               Container(
-                 margin: EdgeInsets.symmetric(vertical: 35.0,horizontal: 16.0),
-                 decoration: BoxDecoration(
-                     image: DecorationImage(
-                       image: new AssetImage('assets/images/icon1.png'),
-
-
-                     )
-                 ),
-
-               ),
-               GestureDetector(
-                 onTap: () {
-                   Navigator.push(context, MaterialPageRoute (
-                       builder:(context)=>subCatList()
-
-                   )
-                   );
-                 },
-                 child: Container(
-                   margin: EdgeInsets.only(top: 100.0),
-                   alignment: Alignment.center,
-                   child: Text('Data Handling',
-                     style: TextStyle(
-                         fontSize: 15.0,
-                         fontWeight: FontWeight.bold,
-                         color: Colors.white
-
-
-                     ),),
-
-                 ),
-               )
-             ],
-             ),
-           ),
-         )
-       ],
+        children: <Widget>[
+          CustomPaint(
+            painter: ShapesPainter(),
+            child: Container(
+              height: 150,
+              width: 150,
+              decoration: BoxDecoration(
+                border: new Border.all(color: Colors.white),
+                borderRadius: BorderRadius.all(Radius.circular(0.0)),
+              ),
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    margin:
+                        EdgeInsets.symmetric(vertical: 35.0, horizontal: 16.0),
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                      image: new AssetImage('assets/images/icon1.png'),
+                    )),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => subCatList()));
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(top: 100.0),
+                      alignment: Alignment.center,
+                      child: Column(
+                        children: <Widget>[
+                          Stack(children: <Widget>[
+   IconButton(
+                            icon: Icon(Icons.account_box),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => subCatList()),
+                              );
+                            },
+                          ),
+                          Text(
+                            'Data Handling',
+                            style: TextStyle(
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                          ],)
+                       
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
@@ -83,8 +94,8 @@ class ShapesPainter extends CustomPainter {
     path.close();
     canvas.drawPath(path, paint);
     // set the color property of the paint
-
   }
+
   @override
   bool shouldRepaint(CustomPainter oldDelegate) => false;
 }
