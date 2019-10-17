@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mathapp/Signup.dart';
+import 'package:mathapp/subCatList.dart';
 
 class CategoryRow extends StatelessWidget{
   @override
@@ -34,7 +35,7 @@ class CategoryRow extends StatelessWidget{
                GestureDetector(
                  onTap: () {
                    Navigator.push(context, MaterialPageRoute (
-                       builder:(context)=>account_signup()
+                       builder:(context)=>subCatList()
 
                    )
                    );
