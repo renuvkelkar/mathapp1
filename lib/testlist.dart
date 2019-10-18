@@ -16,7 +16,7 @@ class testlist extends StatelessWidget{
     final data= MediaQuery.of(context);
     return Scaffold(
       appBar: new AppBar(
-        title:  Text('Data Handling'),
+        title: Text('Test'),
 
         backgroundColor: Colors.green,
         elevation: 0.0,
@@ -102,14 +102,24 @@ class testlist extends StatelessWidget{
 
 
                     children: <Widget>[
-                     GridView.builder(
-                       shrinkWrap: true,
 
-                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                         crossAxisCount: 2)
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: GridView.builder(
 
-                         , itemBuilder: (context, index) => new SubListRow(testboxs[index]),
-                           itemCount: testboxs.length,
+                          shrinkWrap: true,
+
+
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisSpacing: 20.0,
+                              mainAxisSpacing: 20.0,
+                              crossAxisCount: 2)
+
+                          ,
+                          itemBuilder: (context, index) => new SubListRow(
+                              testboxs[index]),
+                          itemCount: testboxs.length,
+                        ),
                      )
 
 
